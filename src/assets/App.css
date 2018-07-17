@@ -1,0 +1,217 @@
+@import "normalize.css";
+
+:root{
+    --primary-color: #41D91D;
+    --main-font-color: #3F444E;
+    --secondary-font-color: #8997AA;
+    --detail-color: #B5B5B5;
+    --detail-color-light: #FDFDFD;
+}
+
+body{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h4{
+    margin: 5% auto;
+    width: 70%;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .8px;
+    color: var(--secondary-font-color);
+    text-align: center;
+    line-height: 20px;
+}
+
+h4 > a {
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.title-wrapper{
+    max-width: 600px;
+    margin: 2% auto 0 auto;
+    text-align: center;
+}
+
+.title-wrapper > h1{
+    font-size: 35px;
+    text-align: center;
+    color: var(--main-font-color);
+    font-weight: 450;
+    letter-spacing: .8px;
+}
+
+.title-wrapper > h3{
+    margin: 0 auto;
+    width: 70%;
+    font-size: 16px;
+    color: var(--secondary-font-color);
+    font-weight: 300;
+    letter-spacing: .8px;
+    text-align: center;
+    line-height: 20px;
+}
+
+form{
+    width: 50%;
+    max-width: 350px;
+    margin: 2% auto;
+}
+
+form > div{
+    position: relative;
+}
+
+form > div > label{
+    position: absolute;
+}
+
+
+input:not([type=submit]){
+    display: block;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid var(--detail-color);
+    background-color: var(--detail-color-light);
+    height: 45px;
+    width: 100%;
+    padding: 5%;
+    margin: 5% auto;
+    box-sizing: border-box;
+}
+
+input:focus{
+    outline: none !important;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 4px var(--detail-color);
+}
+
+input:focus + label{
+    transform: translateY(-2px);
+}
+
+input[type=submit]{
+    display: block;
+    width: 80%;
+    height: 40px;
+    border-radius: 50px;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    margin: 0 auto;
+    margin-top: 15%;
+    margin-bottom: 0;
+
+    font-size: 14px;
+    letter-spacing: .5px;
+}
+
+::placeholder{
+    font-size: 13px;
+    letter-spacing: .5px;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    z-index: 1;
+}
+
+
+.steps{
+    display: block;
+    width: 100%;
+    
+}
+
+.steps > ul{
+    position: relative;
+    display: block;
+    width: 40%;
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.steps > ul > li{
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    height: 30px;
+    width: 30px;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    margin: 0 15%;
+    box-sizing: border-box;
+}
+
+
+.steps > ul > li > span{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+   .title-wrapper{
+       width: 100%;
+   }
+   
+    .title-wrapper > h1{
+        font-size: 25px;
+    }
+
+    .title-wrapper > h3{
+        font-size: 14px;
+    }
+    
+    h4{
+        width: 100%;
+    }
+    
+    .container{
+        width: 80%;
+    }
+    canvas{
+        display: none;
+    }
+
+    form{
+        width: 80%;
+    }
+}
+
+/* Larger than phablet */
+/* @media (min-width: 550px) {
+
+} */
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+    canvas{
+        display: block;
+    }
+}
+
+/* Larger than desktop */
+/* @media (min-width: 1000px) {} */
+
+/* Larger than Desktop HD */
+/* @media (min-width: 1200px) {} */
