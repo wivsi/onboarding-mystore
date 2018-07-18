@@ -2,6 +2,7 @@
 
 :root{
     --primary-color: #41D91D;
+    --primary-color-dark: #3cca25;
     --main-font-color: #3F444E;
     --secondary-font-color: #8997AA;
     --detail-color: #B5B5B5;
@@ -112,6 +113,32 @@ input[type=submit]{
 
     font-size: 14px;
     letter-spacing: .5px;
+}
+
+button{
+    display: block;
+    width: 80%;
+    height: 40px;
+    border-radius: 50px;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    margin: 0 auto;
+    margin-top: 15%;
+    margin-bottom: 0;
+
+    font-size: 14px;
+    letter-spacing: .5px;
+}
+
+button:focus{
+    outline: 0;
+}
+
+button:active {
+    outline: none;
+    border: none;
+    background-color: var(--primary-color-dark);
 }
 
 ::placeholder{
