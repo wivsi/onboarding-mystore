@@ -55,6 +55,7 @@ class VerificationForm extends React.Component{
                 name="code1"
                 value={this.state.code1}
                 maxLength='1'
+                autoFocus
                 onChange={e => this.change(e)}/> 
 
                 <input 
@@ -75,7 +76,7 @@ class VerificationForm extends React.Component{
                 maxLength='1'
                 onChange={e => this.change(e)}/> 
 
-                <button onClick={e => this.onSubmit(e)}> Submit </button>
+                <button onClick={e => this.onSubmit(e)}> Validate </button>
             </form>
         )
     }
