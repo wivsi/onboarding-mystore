@@ -15,6 +15,7 @@ class Form extends React.Component{
     onSubmit = e => {
         e.preventDefault();
         this.props.onSubmit(this.state); 
+        console.log("Redirect to Stage2 with this object: ", this.state);
     }
 
     render(){

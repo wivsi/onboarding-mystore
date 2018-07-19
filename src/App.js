@@ -8,6 +8,14 @@ import Stage2 from './components/Stage2';
 import ErrorPath from './components/ErrorPath';
 
 class App extends Component {
+  state  = {
+    contact: {}
+  };
+
+  getData = contact => {
+
+  }
+
 
   /* 
       - Define a callback in parent component which takes the data I need in as a parameter.

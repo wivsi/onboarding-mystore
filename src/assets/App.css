@@ -195,6 +195,22 @@ button:active {
     transform: translate(-50%, -50%);
 }
 
+.verificationInput{
+  width: 300px !important;
+  text-align: center;  
+}
+
+.verificationInput > input{
+    display: inline;
+    width: 50px;
+    margin: 3%;
+    text-align: center;
+}
+
+
+/* MEDIA QUERIES  */
+
+
 /* Larger than mobile */
 @media (min-width: 400px) {
    .title-wrapper{

@@ -5,7 +5,7 @@ import Form from './Form';
 
 class Stage1 extends React.Component{
     state  = {
-        fields: {}
+        fields: {},
     };
 
     onSubmit = fields => {
