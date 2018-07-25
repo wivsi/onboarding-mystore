@@ -15,8 +15,6 @@ class App extends Component {
   getData = contact => {
 
   }
-
-
   /* 
       - Define a callback in parent component which takes the data I need in as a parameter.
       - Pass that callback as a prop to the child.
@@ -25,6 +23,7 @@ class App extends Component {
 
   render() {
     return (
+
       <BrowserRouter>
         <div className="container">
           <Switch>
