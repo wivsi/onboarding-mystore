@@ -1,12 +1,4 @@
 @import url(normalize.css);
-:root {
-  --primary-color: #41d91d;
-  --primary-color-dark: #3cca25;
-  --main-font-color: #3f444e;
-  --secondary-font-color: #8997aa;
-  --detail-color: #b5b5b5;
-  --detail-color-light: #fdfdfd; }
-
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
@@ -16,18 +8,13 @@ h4 {
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.8px;
-  color: var(--secondary-font-color);
+  color: #8997aa;
   text-align: center;
   line-height: 20px; }
   h4 a {
     font-weight: 700;
-    color: var(--primary-color);
+    color: #41d91d;
     text-decoration: none; }
-
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0; }
 
 .title-wrapper {
   max-width: 600px;
@@ -36,14 +23,14 @@ canvas {
   .title-wrapper h1 {
     font-size: 35px;
     text-align: center;
-    color: var(--main-font-color);
+    color: #3f444e;
     font-weight: 450;
     letter-spacing: 0.8px; }
   .title-wrapper h3 {
     margin: 0 auto;
     width: 70%;
     font-size: 16px;
-    color: var(--secondary-font-color);
+    color: #8997aa;
     font-weight: 300;
     letter-spacing: 0.8px;
     text-align: center;
@@ -60,8 +47,8 @@ input:not([type="submit"]) {
   display: block;
   outline: none;
   border-radius: 8px;
-  border: 1px solid var(--detail-color);
-  background-color: var(--detail-color-light);
+  border: 1px solid #b5b5b5;
+  background-color: #fdfdfd;
   height: 45px;
   width: 100%;
   padding: 5%;
@@ -70,8 +57,8 @@ input:not([type="submit"]) {
 
 input:focus {
   outline: none !important;
-  border: 1px solid var(--primary-color);
-  box-shadow: 0 0 4px var(--detail-color); }
+  border: 1px solid #41d91d;
+  box-shadow: 0 0 4px #b5b5b5; }
 
 input:focus + label {
   transform: translateY(-2px); }
@@ -81,8 +68,8 @@ input[type="submit"] {
   width: 80%;
   height: 40px;
   border-radius: 50px;
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+  background-color: #41d91d;
+  border-color: #41d91d;
   color: white;
   margin: 0 auto;
   margin-top: 15%;
@@ -95,8 +82,8 @@ button {
   width: 80%;
   height: 40px;
   border-radius: 50px;
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+  background-color: #41d91d;
+  border-color: #41d91d;
   color: white;
   margin: 0 auto;
   margin-top: 15%;
@@ -105,11 +92,10 @@ button {
   letter-spacing: 0.5px; }
   button:focus {
     outline: 0; }
-
-button:active {
-  outline: none;
-  border: none;
-  background-color: var(--primary-color-dark); }
+  button:active {
+    outline: none;
+    border: none;
+    background-color: #3cca25; }
 
 ::placeholder {
   font-size: 13px;
@@ -123,48 +109,14 @@ button:active {
   width: 40%;
   z-index: 1; }
 
-.steps {
-  display: block;
-  width: 100%; }
-
-.steps > ul {
-  position: relative;
-  display: block;
-  width: 40%;
-  padding: 0;
-  margin: 0 auto;
-  box-sizing: border-box; }
-
-.steps > ul > li {
-  position: relative;
-  display: inline-block;
-  list-style: none;
-  height: 30px;
-  width: 30px;
-  border: 3px solid var(--primary-color);
-  border-radius: 50%;
-  margin: 0 15%;
-  box-sizing: border-box; }
-
-.steps > ul > li > span {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: var(--primary-color);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
-
 .verificationInput {
   width: 300px !important;
   text-align: center; }
-
-.verificationInput > input {
-  display: inline;
-  width: 50px;
-  margin: 3%;
-  text-align: center; }
+  .verificationInput input {
+    display: inline;
+    width: 50px;
+    margin: 3%;
+    text-align: center; }
 
 /* MEDIA QUERIES  */
 /* Larger than mobile */
