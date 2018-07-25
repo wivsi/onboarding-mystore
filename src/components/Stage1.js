@@ -9,7 +9,12 @@ class Stage1 extends React.Component{
     };
 
     onSubmit = fields => {
-        this.setState({fields})
+        this.setState({fields});
+        console.log(fields.email);
+        this.props.history.push({
+            pathname: '/Stage2',
+            search: 'email='+ fields.email+'?phone='+fields.phone
+          });
     }
     
     render(){

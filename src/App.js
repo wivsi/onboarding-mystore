@@ -5,7 +5,28 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import Stage1 from './components/Stage1';
 import Stage2 from './components/Stage2';
+import Stage3 from './components/Stage3';
 import ErrorPath from './components/ErrorPath';
+
+// Make new context
+const MyContext = React.createContext();
+
+// Create a provider component
+class myProvider extends Component{
+  state = {
+    email: 'test@test.no',
+    phone: '00000000'
+  }
+  render (){
+    return(
+      <MyContext.Provider value={{
+        state: this.state
+      }}>
+        {this.props.children}
+      </MyContext.Provider>
+    )
+  }
+}
 
 class App extends Component {
   state  = {
@@ -29,6 +50,7 @@ class App extends Component {
           <Switch>
             <Route path="/" component={Stage1} exact/>
             <Route path="/Stage2" component={Stage2}/>
+            <Route path="/Stage3" component={Stage3}/>
             <Route component={ErrorPath}/> 
           </Switch>
         </div>

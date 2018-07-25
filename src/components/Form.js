@@ -1,4 +1,8 @@
 import React from 'react';
+import {
+    withRouter
+  } from 'react-router-dom'
+  
 
 class Form extends React.Component{
     state = {
@@ -15,7 +19,6 @@ class Form extends React.Component{
     onSubmit = e => {
         e.preventDefault();
         this.props.onSubmit(this.state); 
-        console.log("Redirect to Stage2 with this object: ", this.state);
     }
 
     render(){
@@ -39,4 +42,4 @@ class Form extends React.Component{
     }
 }
 
-export default Form;
+export default withRouter(Form);
