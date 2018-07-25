@@ -13,7 +13,7 @@ class Stage1 extends React.Component{
         console.log(fields.email);
         this.props.history.push({
             pathname: '/Stage2',
-            search: 'email='+ fields.email+'?phone='+fields.phone
+            search: 'email='+ fields.email+'&phone='+fields.phone
           });
     }
     

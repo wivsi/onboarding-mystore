@@ -5,11 +5,13 @@ import { withRouter
 import HeaderText from './HeaderText';
 import VerificationForm from './VerificationForm';
 
+const queryString = require('query-string');
 
 class Stage2 extends React.Component{
     state  = {
-        sms_code: ""
-        
+        sms_code: "",
+        email: "",
+        phone: ""
     };
 
     onSubmit = sms_code => {
@@ -25,7 +27,10 @@ class Stage2 extends React.Component{
                 <HeaderText headerTitle={"Verification"} headerSub={"Please enter the four digits to activate your account"}/>
                 <VerificationForm onSubmit={code => this.onSubmit(code)} /> 
                 <p>You entered code: {(this.state.sms_code)}</p>
-                {/* <p>From Stage1: {this.props.location.state.detail}</p> */}
+                {
+                    console.log(queryString.parse(this.props.location.search))
+                    
+                }
             </div>
         );
     }
