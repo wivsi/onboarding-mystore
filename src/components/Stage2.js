@@ -34,7 +34,6 @@ class Stage2 extends React.Component {
           headerSub={"Please enter the four digits to activate your account"}
         />
         <VerificationForm onSubmit={code => this.onSubmit(code)} />
-        <p>You entered code: {this.state.sms_code}</p>
         {console.log(queryString.parse(this.props.location.search))}
       </div>
     );

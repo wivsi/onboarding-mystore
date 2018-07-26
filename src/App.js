@@ -46,13 +46,15 @@ class App extends Component {
     return (
 
       <BrowserRouter>
-        <div className="container">
-          <Switch>
-            <Route path="/" component={Stage1} exact/>
-            <Route path="/Stage2" component={Stage2}/>
-            <Route path="/Stage3" component={Stage3}/>
-            <Route component={ErrorPath}/> 
-          </Switch>
+        <div className="page">
+          <div className="container">
+            <Switch>
+              <Route path="/" component={Stage1} exact/>
+              <Route path="/Stage2" component={Stage2}/>
+              <Route path="/Stage3" component={Stage3}/>
+              <Route component={ErrorPath}/> 
+            </Switch>
+          </div>
         </div>
       </BrowserRouter>
     );
