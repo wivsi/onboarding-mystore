@@ -9,7 +9,9 @@ $detail-color: #b5b5b5;
 $detail-color-light: #fdfdfd;
 
 $gradient-top: #f5f7fa;
-$gradient-bottom: #c3cfe2;
+$gradient-bottom: #afc0da;
+$gradient-top2: #33de4d;
+$gradient-bottom2: #68eb3c;
 
 $shadow-color: #83909f;
 
@@ -176,10 +178,12 @@ input[type="submit"] {
 }
 
 button {
+  @include box-shadow(1px, 4px, 15px, $shadow-color);
   display: block;
   width: 80%;
   height: 45px;
   border-radius: 7px;
+  @include diagonal-gradient($gradient-top2, $gradient-bottom2);
   background-color: $primary-color;
   border-color: $primary-color;
   color: white;

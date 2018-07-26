@@ -9,7 +9,7 @@ body {
   position: absolute;
   background: #f5f7fa;
   /* For browsers that do not support gradients */
-  background: linear-gradient(to bottom right, #f5f7fa, #c3cfe2);
+  background: linear-gradient(to bottom right, #f5f7fa, #afc0da);
   /* Standard syntax (must be last) */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 ); }
 
@@ -103,10 +103,16 @@ input[type="submit"] {
   letter-spacing: 0.5px; }
 
 button {
+  box-shadow: 1px 4px 15px #83909f;
   display: block;
   width: 80%;
   height: 45px;
   border-radius: 7px;
+  background: #33de4d;
+  /* For browsers that do not support gradients */
+  background: linear-gradient(to bottom right, #33de4d, #68eb3c);
+  /* Standard syntax (must be last) */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 );
   background-color: #41d91d;
   border-color: #41d91d;
   color: white;
