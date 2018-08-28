@@ -1,14 +1,87 @@
 @import "normalize.css";
 
+// Color Variable
 $primary-color: #41d91d;
 $primary-color-dark: #3cca25;
 $main-font-color: #3f444e;
-$secondary-font-color: #8997aa;
+$secondary-font-color: #a2adba;
 $detail-color: #b5b5b5;
 $detail-color-light: #fdfdfd;
 
+$gradient-top: #f5f7fa;
+$gradient-bottom: #afc0da;
+$gradient-top2: #33de4d;
+$gradient-bottom2: #68eb3c;
+
+$shadow-color: #83909f;
+
+
+// Font
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,600,700,800,900');
+
+// Mixins
+@mixin linearGradient($top, $bottom) {
+  background: $top; /* Old browsers */
+  background: -moz-linear-gradient(top, $top 0%, $bottom 100%); /* FF3.6+ */
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, $top),
+    color-stop(100%, $bottom)
+  ); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(
+    top,
+    $top 0%,
+    $bottom 100%
+  ); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $top 0%, $bottom 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $top 0%, $bottom 100%); /* IE10+ */
+  background: linear-gradient(to bottom, $top 0%, $bottom 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin diagonal-gradient($color1, $color2) {
+  background: $color1; /* For browsers that do not support gradients */
+  background: linear-gradient(
+    to bottom right,
+    $color1,
+    $color2
+  ); /* Standard syntax (must be last) */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 );
+}
+
+@mixin vertical-center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin box-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $color: $default) {
+  box-shadow: $x-axis $y-axis $blur $color;
+}
+
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  @include diagonal-gradient($gradient-top, $gradient-bottom);
+  //@include linearGradient($gradient-top, $gradient-bottom);
+}
+
+.container {
+  @include vertical-center();
+  @include box-shadow(0px, 5px, 50px, $shadow-color);
+  background: white;
+  border-radius: 10px;
+  padding: 3%;
+  width: 35%;
+  z-index: 1;
 }
 
 h4 {
@@ -35,28 +108,30 @@ h4 {
 
   h1 {
     font-size: 35px;
+    font-weight: 700;
     text-align: center;
     color: $main-font-color;
-    font-weight: 450;
     letter-spacing: 0.8px;
   }
 
   h3 {
+    font-size: 16px;
     margin: 0 auto;
     width: 70%;
-    font-size: 16px;
     color: $secondary-font-color;
     font-weight: 300;
     letter-spacing: 0.8px;
     text-align: center;
-    line-height: 20px;
+    line-height: 1.5;
+    font-family: sans-serif;
+    text-rendering: optimizeSpeed;
   }
 }
 
 form {
   width: 50%;
   max-width: 350px;
-  margin: 2% auto;
+  margin: 5% auto;
 
   div {
     position: relative;
@@ -103,18 +178,21 @@ input[type="submit"] {
 }
 
 button {
+  @include box-shadow(1px, 4px, 15px, $shadow-color);
   display: block;
   width: 80%;
-  height: 40px;
-  border-radius: 50px;
+  height: 45px;
+  border-radius: 7px;
+  @include diagonal-gradient($gradient-top2, $gradient-bottom2);
   background-color: $primary-color;
   border-color: $primary-color;
   color: white;
   margin: 0 auto;
-  margin-top: 15%;
+  margin-top: 10%;
   margin-bottom: 0;
   font-size: 14px;
-  letter-spacing: 0.5px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
 
   &:focus {
     outline: 0;
@@ -132,15 +210,6 @@ button {
   letter-spacing: 0.5px;
 }
 
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40%;
-  z-index: 1;
-}
-
 .verificationInput {
   width: 300px !important;
   text-align: center;
@@ -156,7 +225,7 @@ button {
 /* MEDIA QUERIES  */
 
 /* Larger than mobile */
-@media (min-width: 400px) {
+/* @media (min-width: 400px) {
   .title-wrapper {
     width: 100%;
   }
@@ -183,7 +252,7 @@ button {
   form {
     width: 80%;
   }
-}
+} */
 
 /* Larger than phablet */
 /* @media (min-width: 550px) {
@@ -191,11 +260,11 @@ button {
 } */
 
 /* Larger than tablet */
-@media (min-width: 750px) {
+/* @media (min-width: 750px) {
   canvas {
     display: block;
   }
-}
+} */
 
 /* Larger than desktop */
 /* @media (min-width: 1000px) {} */
